@@ -4,301 +4,150 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Deepak Yadav - Resume</title>
-    <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
     <style>
         /* General Styles */
         body {
             margin: 0;
             padding: 0;
-            font-family: 'Arial', sans-serif;
-            background-color: #121212;
-            color: #ffffff;
-            overflow-x: hidden;
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #000000;
+            color: #00ff00;
+            overflow: hidden;
         }
 
-        /* Particles Background */
-        #particles-js {
-            position: absolute;
+        /* Command Prompt Container */
+        .cmd-container {
             width: 100%;
-            height: 100%;
-            z-index: -1;
-        }
-
-        /* Header Section */
-        header {
-            text-align: center;
-            padding: 50px 20px;
-            background: rgba(0, 0, 0, 0.8);
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-            animation: fadeIn 2s ease-in-out;
-        }
-
-        header h1 {
-            font-size: 60px;
-            margin: 0;
-            color: #ffdd57;
-            animation: bounce 2s infinite;
-        }
-
-        header p {
-            margin: 10px 0;
-            font-size: 18px;
-        }
-
-        header a {
-            color: #ffdd57;
-            text-decoration: none;
-        }
-
-        header a:hover {
-            text-decoration: underline;
-        }
-
-        /* Container Section */
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 50px auto;
+            height: 100vh;
             padding: 20px;
-            background: rgba(0, 0, 0, 0.8);
-            border-radius: 10px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
-        }
-
-        section {
-            margin-bottom: 40px;
-        }
-
-        section h2 {
-            font-size: 32px;
-            color: #ffdd57;
-            margin-bottom: 20px;
-        }
-
-        section p, section ul {
-            font-size: 18px;
-            line-height: 1.6;
-        }
-
-        ul {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        ul li {
-            margin-bottom: 10px;
+            box-sizing: border-box;
             display: flex;
-            align-items: center;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            overflow-y: auto;
         }
 
-        ul li::before {
-            content: "💻";
-            margin-right: 10px;
-        }
-
-        .experience-item ul li::before {
-            content: "✔️";
-        }
-
-        /* Button */
-        .btn {
+        /* Typing Cursor */
+        .cursor {
             display: inline-block;
-            padding: 15px 30px;
-            background: #007bff;
-            color: #ffffff;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: background 0.3s ease;
-            text-align: center;
+            background-color: #00ff00;
+            width: 10px;
+            height: 20px;
+            margin-left: 5px;
+            animation: blink 1s infinite;
         }
 
-        .btn:hover {
-            background: #0056b3;
+        @keyframes blink {
+            0%, 50% {
+                opacity: 1;
+            }
+            51%, 100% {
+                opacity: 0;
+            }
         }
 
-        /* Animations */
-        @keyframes bounce {
-            0%, 100% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(-10px);
-            }
+        /* Typing Animation */
+        .line {
+            margin: 5px 0;
         }
     </style>
 </head>
 <body>
-    <!-- Particles Background -->
-    <div id="particles-js"></div>
-
-    <!-- Header Section -->
-    <header>
-        <h1>👨‍💻 Deepak Yadav</h1>
-        <p>📍 Gurgaon, Haryana, India</p>
-        <p>📧 Email: <a href="mailto:deepakrao541@gmail.com">deepakrao541@gmail.com</a></p>
-        <p>📞 Phone: +91-8700377112</p>
-        <p>🔗 LinkedIn: <a href="https://www.linkedin.com/in/deepak-yadav-74b456189/" target="_blank">linkedin.com/in/deepak-yadav-74b456189/</a></p>
-    </header>
-
-    <!-- Main Content -->
-    <div class="container">
-        <section class="summary">
-            <h2>🌟 Summary</h2>
-            <p>🚀 TryHackme Top 5%</p>
-            <p>🛡️ Submitted RVD for various government and private organizations.</p>
-        </section>
-
-        <section class="experience">
-            <h2>💼 Experience</h2>
-            <div class="experience-item">
-                <h3>🔍 Security Researcher / Threat Hunter</h3>
-                <p><strong>BolsterAI</strong></p>
-                <p>June 2022 - Present</p>
-                <p>Noida, India - Los Altos, USA HQ</p>
-                <ul>
-                    <li>Uncovering threats and phishing attacks on websites and responsibly reporting them to the vendor.</li>
-                    <li>Wrote detailed reports on findings to improve organization security.</li>
-                </ul>
-            </div>
-        </section>
-
-        <section class="education">
-            <h2>🎓 Education</h2>
-            <div class="education-item">
-                <p><strong>BTECH CSE</strong> (Minor in Cybersecurity)</p>
-                <p>Guru Jambheshwar University of Science and Technology</p>
-                <p>Hisar, Haryana</p>
-                <p>2021 | 7.2 GPA</p>
-            </div>
-        </section>
-
-        <section class="skills">
-            <h2>🛠️ Skills</h2>
-            <ul>
-                <li>Programming Languages: Python, HTML, C [Basics]</li>
-                <li>Networking: Computer Networking, Signalling, RCS, MMS, SMS, E-mail, Network Attacks</li>
-                <li>Tools: BurpSuite, Wireshark, Aircrack, SQLmap, Acunetix, OWASP, Nessus, ZAP, Metasploit</li>
-                <li>Cloud Computing: AWS</li>
-                <li>Platforms: MacOS, Windows, Linux, Kali-Linux, Parrot OS</li>
-                <li>Network Penetration</li>
-                <li>Penetration Testing</li>
-                <li>SQL</li>
-            </ul>
-        </section>
-
-        <div style="text-align: center;">
-            <a href="mailto:deepakrao541@gmail.com" class="btn">📧 Contact Me</a>
-        </div>
+    <div class="cmd-container" id="cmd-container">
+        <div class="line" id="line"></div>
+        <div class="cursor"></div>
     </div>
 
-    <!-- Particles.js Configuration -->
     <script>
-        particlesJS("particles-js", {
-            "particles": {
-                "number": {
-                    "value": 100,
-                    "density": {
-                        "enable": true,
-                        "value_area": 800
-                    }
-                },
-                "color": {
-                    "value": "#ffffff"
-                },
-                "shape": {
-                    "type": "circle",
-                    "stroke": {
-                        "width": 0,
-                        "color": "#000000"
-                    },
-                    "polygon": {
-                        "nb_sides": 5
-                    }
-                },
-                "opacity": {
-                    "value": 0.5,
-                    "random": false,
-                    "anim": {
-                        "enable": false,
-                        "speed": 1,
-                        "opacity_min": 0.1,
-                        "sync": false
-                    }
-                },
-                "size": {
-                    "value": 3,
-                    "random": true,
-                    "anim": {
-                        "enable": false,
-                        "speed": 40,
-                        "size_min": 0.1,
-                        "sync": false
-                    }
-                },
-                "line_linked": {
-                    "enable": true,
-                    "distance": 150,
-                    "color": "#ffffff",
-                    "opacity": 0.4,
-                    "width": 1
-                },
-                "move": {
-                    "enable": true,
-                    "speed": 6,
-                    "direction": "none",
-                    "random": false,
-                    "straight": false,
-                    "out_mode": "out",
-                    "bounce": false,
-                    "attract": {
-                        "enable": false,
-                        "rotateX": 600,
-                        "rotateY": 1200
-                    }
+        // Resume content as an array of lines
+        const resumeLines = [
+            "DEEPAK YADAV",
+            "Gurgaon, Haryana · +91-8700377112",
+            "Deepakrao541@gmail.com · linkedin.com/in/deepak-yadav-74b456189/",
+            "",
+            "Experienced Security Researcher with 3 years in the field, responsible for identifying and reporting threats for multiple brands, resulting in a 75% reduction in security breaches.",
+            "Developed and implemented policies, conducted audits, and led training, all contributing to increased security for organizations.",
+            "In 2 years, successfully completed over 50 POCs and threat hunts on various web, social, app, and also Dark Web.",
+            "",
+            "EXPERIENCE",
+            "JUN 2022 – PRESENT",
+            "THREAT HUNTER/ SECURITY RESEARCHER, BOLSTER",
+            "- Training Checkphish (Open-source tool) results with NLP/CV model to improve AI accuracy and further detection.",
+            "- Uncovering security threats and Phish/Scam campaigns on websites and responsibly reporting them to the vendor.",
+            "- Prepared detailed reports on findings to improve the security of the organization's identity and trademarks.",
+            "- Worked on POCs for the organization through internal and external hunting and handled meetings with clients regarding POCs and demos for products.",
+            "",
+            "AUG 2021 – JUN 2022",
+            "SECURITY ANALYST, ADAPTIVE MOBILE SECURITY (ENEA)",
+            "- Implemented security policies and procedures, leading to a 75% reduction in security breaches.",
+            "- Monitored networks and systems to identify and mitigate security risks.",
+            "- Developed and implemented security policies and procedures to protect company data.",
+            "- Conducted regular audits and assessments to identify vulnerabilities.",
+            "",
+            "EDUCATION",
+            "JULY 2021",
+            "B.TECH CSE, GJUS&T HISAR",
+            "7.2 GPA",
+            "",
+            "MAY 2017",
+            "CBSE XII, RPS SCHOOL REWARI",
+            "72%",
+            "",
+            "SKILLS",
+            "- OSINT",
+            "- Amazon Web Services - Azure Sentinel Basics",
+            "- Application Security Testing",
+            "- Cyber Threat Hunting",
+            "- Incident Response",
+            "- Log Analysis",
+            "- Python",
+            "- SIEM Tools",
+            "- SQL",
+            "- Vulnerability Assessment",
+            "",
+            "CERTIFICATIONS",
+            "- Microsoft Copilot for Security - LinkedIn",
+            "- Endpoint Detection and Response (EDR) - Picus Security",
+            "- ISO/IEC 27001 Information Security Associate™ - SkillFront",
+            "- Splunk: Zero to Power User - Udemy",
+            "- Learning Cloud Computing: Core Concepts - LinkedIn",
+            "",
+            "END OF RESUME"
+        ];
+
+        // Typing effect
+        const cmdContainer = document.getElementById("cmd-container");
+        const cursor = document.querySelector(".cursor");
+
+        let lineIndex = 0;
+        let charIndex = 0;
+
+        function typeLine() {
+            if (lineIndex < resumeLines.length) {
+                const currentLine = resumeLines[lineIndex];
+                const lineElement = document.getElementById("line");
+
+                if (charIndex < currentLine.length) {
+                    lineElement.textContent += currentLine[charIndex];
+                    charIndex++;
+                    setTimeout(typeLine, 50); // Typing speed (50ms per character)
+                } else {
+                    // Move to the next line
+                    const newLine = document.createElement("div");
+                    newLine.classList.add("line");
+                    newLine.id = "line";
+                    cmdContainer.insertBefore(newLine, cursor);
+
+                    lineIndex++;
+                    charIndex = 0;
+                    setTimeout(typeLine, 500); // Delay between lines
                 }
-            },
-            "interactivity": {
-                "detect_on": "canvas",
-                "events": {
-                    "onhover": {
-                        "enable": true,
-                        "mode": "repulse"
-                    },
-                    "onclick": {
-                        "enable": true,
-                        "mode": "push"
-                    },
-                    "resize": true
-                },
-                "modes": {
-                    "grab": {
-                        "distance": 400,
-                        "line_linked": {
-                            "opacity": 1
-                        }
-                    },
-                    "bubble": {
-                        "distance": 400,
-                        "size": 40,
-                        "duration": 2,
-                        "opacity": 8,
-                        "speed": 3
-                    },
-                    "repulse": {
-                        "distance": 200,
-                        "duration": 0.4
-                    },
-                    "push": {
-                        "particles_nb": 4
-                    },
-                    "remove": {
-                        "particles_nb": 2
-                    }
-                }
-            },
-            "retina_detect": true
-        });
+            }
+        }
+
+        // Start typing
+        typeLine();
     </script>
 </body>
 </html>
