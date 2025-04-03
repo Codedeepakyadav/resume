@@ -4,179 +4,53 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Deepak Yadav - Resume</title>
-    <style>
-        /* General Styles */
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: "Courier New", Courier, monospace;
-            background-color: #000;
-            color: #0f0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            overflow: hidden;
-        }
-
-        /* Terminal Container */
-        .terminal-loader {
-            border: 0.1em solid #333;
-            background-color: #1a1a1a;
-            color: #0f0;
-            font-size: 1em;
-            padding: 1.5em 1em;
-            width: 90%;
-            max-width: 800px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            border-radius: 4px;
-            position: relative;
-            overflow: hidden;
-            box-sizing: border-box;
-        }
-
-        /* Terminal Header */
-        .terminal-header {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 1.5em;
-            background-color: #333;
-            border-top-left-radius: 4px;
-            border-top-right-radius: 4px;
-            padding: 0 0.4em;
-            box-sizing: border-box;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .terminal-title {
-            color: #eee;
-            font-size: 0.9em;
-        }
-
-        .terminal-controls {
-            display: flex;
-            gap: 0.4em;
-        }
-
-        .control {
-            width: 0.6em;
-            height: 0.6em;
-            border-radius: 50%;
-            background-color: #777;
-        }
-
-        .control.close {
-            background-color: #e33;
-        }
-
-        .control.minimize {
-            background-color: #ee0;
-        }
-
-        .control.maximize {
-            background-color: #0b0;
-        }
-
-        /* Typing Animation */
-        .text {
-            display: inline-block;
-            white-space: nowrap;
-            overflow: hidden;
-            border-right: 0.2em solid green; /* Cursor */
-            animation: typeAndDelete 10s steps(40) infinite, blinkCursor 0.5s step-end infinite alternate;
-            margin-top: 2em;
-        }
-
-        @keyframes blinkCursor {
-            50% {
-                border-right-color: transparent;
-            }
-        }
-
-        @keyframes typeAndDelete {
-            0%, 10% {
-                width: 0;
-            }
-            45%, 55% {
-                width: 100%; /* Adjust width based on content */
-            }
-            90%, 100% {
-                width: 0;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="terminal-loader">
-        <!-- Terminal Header -->
-        <div class="terminal-header">
-            <div class="terminal-title">Deepak's Resume</div>
-            <div class="terminal-controls">
-                <div class="control close"></div>
-                <div class="control minimize"></div>
-                <div class="control maximize"></div>
-            </div>
-        </div>
+    <header>
+        <h1>Deepak Yadav</h1>
+        <p>Security Researcher | Gurgaon, Haryana</p>
+        <nav>
+            <ul>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#certifications">Certifications</a></li>
+                <li><a href="#repositories">Repositories</a></li>
+            </ul>
+        </nav>
+    </header>
 
-        <!-- Typing Text -->
-        <div class="text">
-            DEEPAK YADAV<br>
-            Gurgaon, Haryana <br>
-            Deepakrao541@gmail.com · linkedin.com/in/deepak-yadav-74b456189/<br><br>
+    <section id="experience">
+        <h2>Experience</h2>
+        <p>Details about your experience...</p>
+    </section>
 
-            Experienced Security Researcher with 3 years in the field, responsible for identifying and reporting threats for multiple brands, resulting in a 75% reduction in security breaches.<br>
-            Developed and implemented policies, conducted audits, and led training, all contributing to increased security for organizations.<br>
-            In 2 years, successfully completed over 50 POCs and threat hunts on various web, social, app, and also Dark Web.<br><br>
+    <section id="education">
+        <h2>Education</h2>
+        <p>Details about your education...</p>
+    </section>
 
-            EXPERIENCE<br>
-            JUN 2022 – PRESENT<br>
-            THREAT HUNTER/ SECURITY RESEARCHER, BOLSTER<br>
-            - Training Checkphish (Open-source tool) results with NLP/CV model to improve AI accuracy and further detection.<br>
-            - Uncovering security threats and Phish/Scam campaigns on websites and responsibly reporting them to the vendor.<br>
-            - Prepared detailed reports on findings to improve the security of the organization's identity and trademarks.<br>
-            - Worked on POCs for the organization through internal and external hunting and handled meetings with clients regarding POCs and demos for products.<br><br>
+    <section id="skills">
+        <h2>Skills</h2>
+        <p>Details about your skills...</p>
+    </section>
 
-            AUG 2021 – JUN 2022<br>
-            SECURITY ANALYST, ADAPTIVE MOBILE SECURITY (ENEA)<br>
-            - Implemented security policies and procedures, leading to a 75% reduction in security breaches.<br>
-            - Monitored networks and systems to identify and mitigate security risks.<br>
-            - Developed and implemented security policies and procedures to protect company data.<br>
-            - Conducted regular audits and assessments to identify vulnerabilities.<br><br>
+    <section id="certifications">
+        <h2>Certifications</h2>
+        <p>Details about your certifications...</p>
+    </section>
 
-            EDUCATION<br>
-            JULY 2021<br>
-            B.TECH CSE, GJUS&T HISAR<br>
-            7.2 GPA<br><br>
+    <section id="repositories">
+        <h2>Repositories</h2>
+        <p>Details about your repositories...</p>
+    </section>
 
-            MAY 2017<br>
-            CBSE XII, RPS SCHOOL REWARI<br>
-            72%<br><br>
+    <footer>
+        <p>Contact: <a href="mailto:Deepakrao541@gmail.com">Deepakrao541@gmail.com</a></p>
+        <p>LinkedIn: <a href="https://linkedin.com/in/deepak-yadav-74b456189/">linkedin.com/in/deepak-yadav-74b456189/</a></p>
+    </footer>
 
-            SKILLS<br>
-            - OSINT<br>
-            - Amazon Web Services - Azure Sentinel Basics<br>
-            - Application Security Testing<br>
-            - Cyber Threat Hunting<br>
-            - Incident Response<br>
-            - Log Analysis<br>
-            - Python<br>
-            - SIEM Tools<br>
-            - SQL<br>
-            - Vulnerability Assessment<br><br>
-
-            CERTIFICATIONS<br>
-            - Microsoft Copilot for Security - LinkedIn<br>
-            - Endpoint Detection and Response (EDR) - Picus Security<br>
-            - ISO/IEC 27001 Information Security Associate™ - SkillFront<br>
-            - Splunk: Zero to Power User - Udemy<br>
-            - Learning Cloud Computing: Core Concepts - LinkedIn<br><br>
-
-            END OF RESUME
-        </div>
-    </div>
+    <script src="script.js"></script>
 </body>
 </html>
