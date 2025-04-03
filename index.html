@@ -4,130 +4,119 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Deepak Yadav - Resume</title>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
     <style>
+        /* General Styles */
         body {
-            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background: linear-gradient(135deg, #007bff, #6c757d);
-            color: #fff;
+            font-family: 'Arial', sans-serif;
+            background-color: #121212;
+            color: #ffffff;
             overflow-x: hidden;
         }
 
-        header {
-            text-align: center;
-            padding: 40px 20px;
-            background: rgba(0, 0, 0, 0.5);
-            animation: fadeIn 2s ease-in-out;
+        /* Particles Background */
+        #particles-js {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
         }
 
-        h1 {
-            font-size: 48px;
+        /* Header Section */
+        header {
+            text-align: center;
+            padding: 50px 20px;
+            background: rgba(0, 0, 0, 0.8);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        header h1 {
+            font-size: 60px;
             margin: 0;
             color: #ffdd57;
             animation: bounce 2s infinite;
         }
 
-        h2 {
-            font-size: 28px;
-            color: #ffdd57;
-            margin-bottom: 10px;
+        header p {
+            margin: 10px 0;
+            font-size: 18px;
         }
 
-        p {
-            margin: 5px 0;
-        }
-
-        a {
+        header a {
             color: #ffdd57;
             text-decoration: none;
         }
 
-        a:hover {
+        header a:hover {
             text-decoration: underline;
         }
 
+        /* Container Section */
         .container {
-            max-width: 900px;
-            margin: 20px auto;
+            width: 90%;
+            max-width: 1200px;
+            margin: 50px auto;
             padding: 20px;
-            background: rgba(255, 255, 255, 0.9);
-            color: #333;
+            background: rgba(0, 0, 0, 0.8);
             border-radius: 10px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-            animation: slideIn 1.5s ease-out;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
         }
 
         section {
-            margin-bottom: 30px;
+            margin-bottom: 40px;
         }
 
-        .skills ul {
+        section h2 {
+            font-size: 32px;
+            color: #ffdd57;
+            margin-bottom: 20px;
+        }
+
+        section p, section ul {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        ul {
             list-style-type: none;
             padding: 0;
         }
 
-        .skills li {
+        ul li {
             margin-bottom: 10px;
             display: flex;
             align-items: center;
         }
 
-        .skills li::before {
+        ul li::before {
             content: "💻";
             margin-right: 10px;
         }
 
-        .experience-item ul {
-            list-style-type: none;
-            padding: 0;
-        }
-
         .experience-item ul li::before {
             content: "✔️";
-            margin-right: 10px;
         }
 
-        .emoji {
-            font-size: 24px;
-            margin-right: 10px;
-        }
-
+        /* Button */
         .btn {
             display: inline-block;
-            padding: 10px 20px;
+            padding: 15px 30px;
             background: #007bff;
-            color: #fff;
+            color: #ffffff;
             border-radius: 5px;
             text-decoration: none;
             font-weight: bold;
             transition: background 0.3s ease;
+            text-align: center;
         }
 
         .btn:hover {
             background: #0056b3;
         }
 
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-
-        @keyframes slideIn {
-            from {
-                transform: translateY(50px);
-                opacity: 0;
-            }
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
-
+        /* Animations */
         @keyframes bounce {
             0%, 100% {
                 transform: translateY(0);
@@ -139,13 +128,19 @@
     </style>
 </head>
 <body>
+    <!-- Particles Background -->
+    <div id="particles-js"></div>
+
+    <!-- Header Section -->
     <header>
         <h1>👨‍💻 Deepak Yadav</h1>
         <p>📍 Gurgaon, Haryana, India</p>
         <p>📧 Email: <a href="mailto:deepakrao541@gmail.com">deepakrao541@gmail.com</a></p>
+        <p>📞 Phone: +91-8700377112</p>
         <p>🔗 LinkedIn: <a href="https://www.linkedin.com/in/deepak-yadav-74b456189/" target="_blank">linkedin.com/in/deepak-yadav-74b456189/</a></p>
     </header>
 
+    <!-- Main Content -->
     <div class="container">
         <section class="summary">
             <h2>🌟 Summary</h2>
@@ -195,5 +190,114 @@
             <a href="mailto:deepakrao541@gmail.com" class="btn">📧 Contact Me</a>
         </div>
     </div>
+
+    <!-- Particles.js Configuration -->
+    <script>
+        particlesJS("particles-js", {
+            "particles": {
+                "number": {
+                    "value": 100,
+                    "density": {
+                        "enable": true,
+                        "value_area": 800
+                    }
+                },
+                "color": {
+                    "value": "#ffffff"
+                },
+                "shape": {
+                    "type": "circle",
+                    "stroke": {
+                        "width": 0,
+                        "color": "#000000"
+                    },
+                    "polygon": {
+                        "nb_sides": 5
+                    }
+                },
+                "opacity": {
+                    "value": 0.5,
+                    "random": false,
+                    "anim": {
+                        "enable": false,
+                        "speed": 1,
+                        "opacity_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "size": {
+                    "value": 3,
+                    "random": true,
+                    "anim": {
+                        "enable": false,
+                        "speed": 40,
+                        "size_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "line_linked": {
+                    "enable": true,
+                    "distance": 150,
+                    "color": "#ffffff",
+                    "opacity": 0.4,
+                    "width": 1
+                },
+                "move": {
+                    "enable": true,
+                    "speed": 6,
+                    "direction": "none",
+                    "random": false,
+                    "straight": false,
+                    "out_mode": "out",
+                    "bounce": false,
+                    "attract": {
+                        "enable": false,
+                        "rotateX": 600,
+                        "rotateY": 1200
+                    }
+                }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": {
+                    "onhover": {
+                        "enable": true,
+                        "mode": "repulse"
+                    },
+                    "onclick": {
+                        "enable": true,
+                        "mode": "push"
+                    },
+                    "resize": true
+                },
+                "modes": {
+                    "grab": {
+                        "distance": 400,
+                        "line_linked": {
+                            "opacity": 1
+                        }
+                    },
+                    "bubble": {
+                        "distance": 400,
+                        "size": 40,
+                        "duration": 2,
+                        "opacity": 8,
+                        "speed": 3
+                    },
+                    "repulse": {
+                        "distance": 200,
+                        "duration": 0.4
+                    },
+                    "push": {
+                        "particles_nb": 4
+                    },
+                    "remove": {
+                        "particles_nb": 2
+                    }
+                }
+            },
+            "retina_detect": true
+        });
+    </script>
 </body>
 </html>
