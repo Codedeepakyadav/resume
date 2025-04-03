@@ -9,145 +9,174 @@
         body {
             margin: 0;
             padding: 0;
-            font-family: 'Courier New', Courier, monospace;
-            background-color: #000000;
-            color: #00ff00;
+            font-family: "Courier New", Courier, monospace;
+            background-color: #000;
+            color: #0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
             overflow: hidden;
         }
 
-        /* Command Prompt Container */
-        .cmd-container {
-            width: 100%;
-            height: 100vh;
-            padding: 20px;
+        /* Terminal Container */
+        .terminal-loader {
+            border: 0.1em solid #333;
+            background-color: #1a1a1a;
+            color: #0f0;
+            font-size: 1em;
+            padding: 1.5em 1em;
+            width: 90%;
+            max-width: 800px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 4px;
+            position: relative;
+            overflow: hidden;
+            box-sizing: border-box;
+        }
+
+        /* Terminal Header */
+        .terminal-header {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1.5em;
+            background-color: #333;
+            border-top-left-radius: 4px;
+            border-top-right-radius: 4px;
+            padding: 0 0.4em;
             box-sizing: border-box;
             display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-            align-items: flex-start;
-            overflow-y: auto;
+            align-items: center;
+            justify-content: space-between;
         }
 
-        /* Typing Cursor */
-        .cursor {
-            display: inline-block;
-            background-color: #00ff00;
-            width: 10px;
-            height: 20px;
-            margin-left: 5px;
-            animation: blink 1s infinite;
+        .terminal-title {
+            color: #eee;
+            font-size: 0.9em;
         }
 
-        @keyframes blink {
-            0%, 50% {
-                opacity: 1;
-            }
-            51%, 100% {
-                opacity: 0;
-            }
+        .terminal-controls {
+            display: flex;
+            gap: 0.4em;
+        }
+
+        .control {
+            width: 0.6em;
+            height: 0.6em;
+            border-radius: 50%;
+            background-color: #777;
+        }
+
+        .control.close {
+            background-color: #e33;
+        }
+
+        .control.minimize {
+            background-color: #ee0;
+        }
+
+        .control.maximize {
+            background-color: #0b0;
         }
 
         /* Typing Animation */
-        .line {
-            margin: 5px 0;
+        .text {
+            display: inline-block;
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: 0.2em solid green; /* Cursor */
+            animation: typeAndDelete 10s steps(40) infinite, blinkCursor 0.5s step-end infinite alternate;
+            margin-top: 2em;
+        }
+
+        @keyframes blinkCursor {
+            50% {
+                border-right-color: transparent;
+            }
+        }
+
+        @keyframes typeAndDelete {
+            0%, 10% {
+                width: 0;
+            }
+            45%, 55% {
+                width: 100%; /* Adjust width based on content */
+            }
+            90%, 100% {
+                width: 0;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="cmd-container" id="cmd-container">
-        <div class="line" id="line"></div>
-        <div class="cursor"></div>
+    <div class="terminal-loader">
+        <!-- Terminal Header -->
+        <div class="terminal-header">
+            <div class="terminal-title">Deepak's Resume</div>
+            <div class="terminal-controls">
+                <div class="control close"></div>
+                <div class="control minimize"></div>
+                <div class="control maximize"></div>
+            </div>
+        </div>
+
+        <!-- Typing Text -->
+        <div class="text">
+            DEEPAK YADAV<br>
+            Gurgaon, Haryana · +91-8700377112<br>
+            Deepakrao541@gmail.com · linkedin.com/in/deepak-yadav-74b456189/<br><br>
+
+            Experienced Security Researcher with 3 years in the field, responsible for identifying and reporting threats for multiple brands, resulting in a 75% reduction in security breaches.<br>
+            Developed and implemented policies, conducted audits, and led training, all contributing to increased security for organizations.<br>
+            In 2 years, successfully completed over 50 POCs and threat hunts on various web, social, app, and also Dark Web.<br><br>
+
+            EXPERIENCE<br>
+            JUN 2022 – PRESENT<br>
+            THREAT HUNTER/ SECURITY RESEARCHER, BOLSTER<br>
+            - Training Checkphish (Open-source tool) results with NLP/CV model to improve AI accuracy and further detection.<br>
+            - Uncovering security threats and Phish/Scam campaigns on websites and responsibly reporting them to the vendor.<br>
+            - Prepared detailed reports on findings to improve the security of the organization's identity and trademarks.<br>
+            - Worked on POCs for the organization through internal and external hunting and handled meetings with clients regarding POCs and demos for products.<br><br>
+
+            AUG 2021 – JUN 2022<br>
+            SECURITY ANALYST, ADAPTIVE MOBILE SECURITY (ENEA)<br>
+            - Implemented security policies and procedures, leading to a 75% reduction in security breaches.<br>
+            - Monitored networks and systems to identify and mitigate security risks.<br>
+            - Developed and implemented security policies and procedures to protect company data.<br>
+            - Conducted regular audits and assessments to identify vulnerabilities.<br><br>
+
+            EDUCATION<br>
+            JULY 2021<br>
+            B.TECH CSE, GJUS&T HISAR<br>
+            7.2 GPA<br><br>
+
+            MAY 2017<br>
+            CBSE XII, RPS SCHOOL REWARI<br>
+            72%<br><br>
+
+            SKILLS<br>
+            - OSINT<br>
+            - Amazon Web Services - Azure Sentinel Basics<br>
+            - Application Security Testing<br>
+            - Cyber Threat Hunting<br>
+            - Incident Response<br>
+            - Log Analysis<br>
+            - Python<br>
+            - SIEM Tools<br>
+            - SQL<br>
+            - Vulnerability Assessment<br><br>
+
+            CERTIFICATIONS<br>
+            - Microsoft Copilot for Security - LinkedIn<br>
+            - Endpoint Detection and Response (EDR) - Picus Security<br>
+            - ISO/IEC 27001 Information Security Associate™ - SkillFront<br>
+            - Splunk: Zero to Power User - Udemy<br>
+            - Learning Cloud Computing: Core Concepts - LinkedIn<br><br>
+
+            END OF RESUME
+        </div>
     </div>
-
-    <script>
-        // Resume content as an array of lines
-        const resumeLines = [
-            "DEEPAK YADAV",
-            "Gurgaon, Haryana · +91-8700377112",
-            "Deepakrao541@gmail.com · linkedin.com/in/deepak-yadav-74b456189/",
-            "",
-            "Experienced Security Researcher with 3 years in the field, responsible for identifying and reporting threats for multiple brands, resulting in a 75% reduction in security breaches.",
-            "Developed and implemented policies, conducted audits, and led training, all contributing to increased security for organizations.",
-            "In 2 years, successfully completed over 50 POCs and threat hunts on various web, social, app, and also Dark Web.",
-            "",
-            "EXPERIENCE",
-            "JUN 2022 – PRESENT",
-            "THREAT HUNTER/ SECURITY RESEARCHER, BOLSTER",
-            "- Training Checkphish (Open-source tool) results with NLP/CV model to improve AI accuracy and further detection.",
-            "- Uncovering security threats and Phish/Scam campaigns on websites and responsibly reporting them to the vendor.",
-            "- Prepared detailed reports on findings to improve the security of the organization's identity and trademarks.",
-            "- Worked on POCs for the organization through internal and external hunting and handled meetings with clients regarding POCs and demos for products.",
-            "",
-            "AUG 2021 – JUN 2022",
-            "SECURITY ANALYST, ADAPTIVE MOBILE SECURITY (ENEA)",
-            "- Implemented security policies and procedures, leading to a 75% reduction in security breaches.",
-            "- Monitored networks and systems to identify and mitigate security risks.",
-            "- Developed and implemented security policies and procedures to protect company data.",
-            "- Conducted regular audits and assessments to identify vulnerabilities.",
-            "",
-            "EDUCATION",
-            "JULY 2021",
-            "B.TECH CSE, GJUS&T HISAR",
-            "7.2 GPA",
-            "",
-            "MAY 2017",
-            "CBSE XII, RPS SCHOOL REWARI",
-            "72%",
-            "",
-            "SKILLS",
-            "- OSINT",
-            "- Amazon Web Services - Azure Sentinel Basics",
-            "- Application Security Testing",
-            "- Cyber Threat Hunting",
-            "- Incident Response",
-            "- Log Analysis",
-            "- Python",
-            "- SIEM Tools",
-            "- SQL",
-            "- Vulnerability Assessment",
-            "",
-            "CERTIFICATIONS",
-            "- Microsoft Copilot for Security - LinkedIn",
-            "- Endpoint Detection and Response (EDR) - Picus Security",
-            "- ISO/IEC 27001 Information Security Associate™ - SkillFront",
-            "- Splunk: Zero to Power User - Udemy",
-            "- Learning Cloud Computing: Core Concepts - LinkedIn",
-            "",
-            "END OF RESUME"
-        ];
-
-        // Typing effect
-        const cmdContainer = document.getElementById("cmd-container");
-        const cursor = document.querySelector(".cursor");
-
-        let lineIndex = 0;
-        let charIndex = 0;
-
-        function typeLine() {
-            if (lineIndex < resumeLines.length) {
-                const currentLine = resumeLines[lineIndex];
-                const lineElement = document.getElementById("line");
-
-                if (charIndex < currentLine.length) {
-                    lineElement.textContent += currentLine[charIndex];
-                    charIndex++;
-                    setTimeout(typeLine, 50); // Typing speed (50ms per character)
-                } else {
-                    // Move to the next line
-                    const newLine = document.createElement("div");
-                    newLine.classList.add("line");
-                    newLine.id = "line";
-                    cmdContainer.insertBefore(newLine, cursor);
-
-                    lineIndex++;
-                    charIndex = 0;
-                    setTimeout(typeLine, 500); // Delay between lines
-                }
-            }
-        }
-
-        // Start typing
-        typeLine();
-    </script>
 </body>
 </html>
